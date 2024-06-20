@@ -1,0 +1,41 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background:url("images/bprofile.jpg") no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.base {
+    background-color: rgba(255, 255, 255, 0.603);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    width: 600px;
+    padding: 30px;
+    height: 60%;
+    text-align: center;
+}
+.base-2 h4 {
+    color: #1a1919;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.base-2 h5 {
+    color: #2c2c2c;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.base-3 button {
+    background-color: #ca316c;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.base-3 button:hover {
+    background-color: #ad2150;
+}

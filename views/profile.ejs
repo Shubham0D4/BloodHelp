@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile">
+        <div class="prof"></div>
+        <div>
+
+            <form action="/profile.ejs" method="post" enctype="multipart/form-data">
+                <hr>
+                <h3><%= data.Name %></h3>
+                <h5>Age: <%= data.age %></h5>
+                <h5>Gender: <%= data.gender  %></h5>
+                <h5>Blood Group: <%= data.bloodgroup %></h5>
+                <h5><%= data.Phone  %></h5>
+                <h5><%= data.mail %></h5>
+                <h5><%= data.address %></h5>
+            </form>
+        </div>
+        <hr>
+        <form action="/action1" method="post" class="donate">
+            <button type="submit" class="dntd">Donate Blood</button>
+        </form>
+        <form action="/action2" method="post" class="recieve">
+            <button type="submit" class="rece">Recieve Blood</button>
+        </form>
+    </div>
+</body>
+</html>

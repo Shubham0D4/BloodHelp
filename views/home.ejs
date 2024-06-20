@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood</title>
+    <link rel="stylesheet" href="qstyle.css">
+</head>
+<body>
+    <div class="full">
+
+        <div>
+            <div class="name">
+                <h1>
+            Hello, 
+            <br><h3>Please Fill this data: </h3>
+        </h1>
+    </div>
+    <div class="data center-both">
+        
+        <form action="/home.ejs" method="post">
+        <div class="que">
+            <h4>Your Contact details: </h4>
+            <label for="">Enter your userame</label>
+            <input type="text" name="name" class="" >
+            <label for="">Enter your phone number:</label>
+            <input type="number" name="phonenumber" class="">
+            
+        </div>
+        <br>
+        <div class="quee">
+            <h4>Your Medical history:</h4>
+            <label for="">Have you ever donated blood?</label>
+            <select name="Donateblood" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="">Date of previous donation:</label>
+            <input type="text" name="donatdate" class="" placeholder="yyyy/mm/dd">
+            <label for="">Do you have any chronic medical conditions or diseases?</label>
+            <select name="ChronicDis" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="">Are you currently taking any medications? If yes, please specify.</label>
+            <input type="text" name="medicals" class="">
+            <label for="">Have you undergone any recent surgeries or medical procedures?</label>
+            <select name="surgery" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <br>
+        </div>
+        <div class="queee">
+            <h4>Health assessment:</h4>
+            <label for="">In the last 24 hours, have you experienced any symptoms of illness such as fever, cough, sore throat, or diarrhea?</label>
+            <select name="symptom" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="">Have you recently traveled to regions with a high prevalence of infectious diseases?</label>
+            <select name="maleri" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="">Have you been in close contact with anyone diagnosed with a transmissible disease in the past few weeks?</label>
+            <select name="transmisdis" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <br>
+        </div>
+        <div class="queeee">
+            <h4>Life risks</h4>
+            <label for="">Do you engage in any high-risk behaviors, such as intravenous drug use or are you having any STD?</label>
+            <select name="riskybehave" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="">Have you received any tattoos, body piercings, or acupuncture in the past 12 months?</label>
+            <select name="tattoo" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="queeeee">
+            <h4>Consent</h4>
+            <label for="">Do you know possible positive and negative outcomes of blood donation? And are you donating blood with all your consent and unforcefully?</label>
+            <select name="consent" size="1">
+                <option value="">Click to select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <a href="map.ejs">
+            <button type="submit" name="submit" onclick="clearInputs()">Submit and find nearby Bloodbanks</button>
+        </a>
+    </form>
+    
+</div>
+</div>
+</div>
+<script>
+    function clearInputs() {
+    document.getElementsByTagName('form').reset();
+}
+window.onload = clearInputs;
+</script>
+</body>
+</html>

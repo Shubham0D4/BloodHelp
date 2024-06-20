@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-Bloodbank</title>
+    <link rel="stylesheet" href="/bstyle.css">
+</head>
+<body>
+    <div class="base">
+        <div class="base-2">
+            <h4>Name of Bloodbank:</h4><h5><%= data.name %></h5>
+            <h4>Mail:</h4><h5><%= data.mail%></h5>
+            <h4>Registration number:</h4><h5><%= data.RegNum %></h5>
+        </div>
+        <div class="base-3">
+            <form action="/blood" method="post">
+                <button type="submit">Blood Availability Report</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recieve Blood</title>
+    <link rel="stylesheet" href="rstyles.css">
+    </head>
+<body>
+    <div class="entry container pt-5">
+        <form action="recieve.ejs" method="post">
+            <div class="info">
+
+                <h3> Hello,</h3>
+                <h4>Please enter your information here:</h4>
+            </div>
+            <div class="info mt-4">
+                <label class="form-label" for="">Enter your username</label>
+                <input type="text" name="name" class="">
+            </div>
+        <div class="data">
+
+            <label for="">Enter your blood group:</label>
+            <input type="text" name="bgrp" class="">
+            <label for="">Enter your blood type:</label>
+            <input type="text" name="btype" class="">
+            <label for="">Any history of adverse transfusion reactions:</label>
+            <select name="AdverseTransfusion" size="1">
+                <option value="yes">Click to change</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="">Enter your medical history:</label>
+            <input type="text" name="medical" class="">
+            <label for="">Upload your blood report here:</label>
+            <input type="file" name="bloodreport" class="">
+        </div>
+        <div class="last">
+
+            <input type="checkbox" name="consentcheck" value="yes" class="">
+            <label for="" class="consent">I, give the full consent that above entered information is completely true and know the consequences of providing wrong information. </label>
+            <button type="submit">Submit and Find nearby bloodbanks.</button>
+        </div>
+    </form>
+    </div> 
+ </body>
+</html>

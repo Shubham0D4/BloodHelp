@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodHelp-Sign up</title>
+    <link type="text/css" rel = "stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-box">
+        <form action="/index.html" method="post" >
+            <div>
+                <h1>Blood Help Registration:</h1>
+                <h2>Fill the detailed information to register on this Portal.</h2>
+                <input type="text" name="username" placeholder="Your name">
+                <input type="text" name="gender" class="" placeholder="Male/Female/Others">
+                <div class="select">
+                    <label for="">Choose your blood group: <t></t></label>
+                    <select name="bgrp" id="">
+                        <option value="">Click to select</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                
+
+                <input type="text" name="dob" placeholder="DoB -yyyy/mm/dd">
+                <input type="email" name="mail" class="" placeholder="Your email">
+                <div class="no">
+                    <div>+91</div>
+                    <input type="number" name="number" placeholder="Enter your phone number">
+                </div>
+                <input type="number" name="adhaar" class="" placeholder="Adhaar number">
+                <input type="text" name="address" placeholder="Enter your full address">
+            </div>
+            <div>
+
+                <input type="password" name="Password" placeholder="Enter your password">
+                <input type="password" name="confirm" id="" placeholder="Confirm your password">
+                <button type="submit" name="submit" onclick="clearInputs()">Sign in</button>
+                <a href="/login.html"><button>Already have an account? Login here.</button></a>
+            </div>
+        </div>
+    </form>
+        <script>
+            function clearInputs() {
+            document.getElementsByTagName('form').reset();
+        }
+        window.onload = clearInputs;
+        </script>
+</body>
+</html>

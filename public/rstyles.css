@@ -1,0 +1,115 @@
+/* rstyles.css */
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: url("images/homepage.jpg");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h3 {
+    font-size: 24px;
+    color: #f8f8f8;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 20px;
+    color: #c9c9c9;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    margin-top: 20px;
+}
+
+/* Input fields and labels */
+input[type="text"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #ded0e4;
+    color: #3a3e42;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 5px 20px rgba(174, 0, 255, 0.3);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ececec;
+}
+
+/* Buttons */
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ff009d;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ad00b3;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.consent {
+    color: #ececec;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    input[type="text"],
+    input[type="file"],
+    select {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nearby Bloodbanks</title>
+  <link rel="stylesheet" href="/map.css">
+</head>
+<body>
+  <div id="map" class="map"></div> 
+
+  <script>
+    
+    function initMap() {
+      
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: { lat: 18.5204, lng: 73.8567 }
+      });
+      
+      
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          // If successful, update map center to user's location
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map.setCenter(pos);
+          
+          // Place a marker for user's location
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: 'Your Location',
+          });
+        }, function() {
+          // If geolocation fails, handle error (you can display a message to the user here)
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+      
+      var customIcon = {
+        url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png', // URL of the marker image with blue color
+        scaledSize: new google.maps.Size(32, 32), // Size of the marker icon
+        origin: new google.maps.Point(0, 0), // Origin point of the icon (top-left corner)
+        anchor: new google.maps.Point(16, 32) // Anchor point of the icon (center bottom)
+      };
+      // Fetch blood bank data
+      fetch('/bloodbanks')
+        .then(response => response.json())
+        .then(bloodBanks => {
+          // Place markers for each blood bank
+          bloodBanks.forEach(locationData => {
+            var marker = new google.maps.Marker({
+              position: { lat: locationData.lat, lng: locationData.long },
+              map: map,
+              title: locationData.name,
+              icon:customIcon
+          });
+        });
+    })
+  }
+    // Function to handle location errors
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      // Handle errors here, if needed
+    }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMkHYtBdyxG29y4vHG_7yMEWU0k6p-rNo&callback=initMap" async defer></script> 
+</body>
+</html>
