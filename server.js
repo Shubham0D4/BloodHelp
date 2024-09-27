@@ -25,7 +25,7 @@ app.use(express.static('public'));
 //error free
 app.get('/bloodbanks', async (req, res) => {
     try {
-        const locationData = await askdb.getLocation(); // Assuming askdb.getLocation() returns a promise
+        const locationData = await askdb.getLocation(); 
         console.log(locationData)
         res.json(locationData);
     } catch (error) {
@@ -124,10 +124,10 @@ app.post('/send-email', async (req, res) => {
         console.log(no);
         await askdb.filldata(no, Aplus, Bplus, ABplus, Oplus, Aminus, Bminus, ABminus, Ominus);
 
-        // Declare variables before using them
+       
         let users = {};
 
-        // Concurrent database queries using Promise.all()
+        
         console.log(Aplus);
         
         var gba, gbb, gbab, gbo, gb0a, gb0b, gb0ab, gb0o;
@@ -351,10 +351,10 @@ app.post('/home.ejs', async (req, res) => {
         // Insert donation data into the database
         await askdb.insertdonate(req.body.name, if_blood_donated, donated_date, chronic, medication, surgery, illness, infectious_travel, trans_dis, addiction, tattoo, consent);
         
-        res.redirect('/map.ejs'); // Sending a success response
+        res.redirect('/map.ejs'); 
     } catch (error) {
         console.error('Error occurred:', error);
-        res.sendStatus(500); // Sending a 500 Internal Server Error status
+        res.sendStatus(500); 
     }
 });
 
@@ -384,27 +384,6 @@ app.post('/recieve.ejs', async (req, res)=>{
     }
 })
 
-// var val ;
-// app.post('/blood', async (req, res)=>{
-//     const data = await askdb.finddata(no);
-//     val = data;
-//     res.render("blood", {data});
-// })
-
-//file handeling
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/') // Uploads directory
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname) // Rename file with current timestamp
-    }
-})
-
-const upload = multer({ storage: storage })
-app.post('/upload', upload.single('fileUpload'), (req, res) => {
-    
-});
 
 app.listen(3000, ()=>{
     console.log("Server started at 3000")
